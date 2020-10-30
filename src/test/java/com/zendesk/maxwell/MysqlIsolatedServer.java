@@ -72,6 +72,7 @@ public class MysqlIsolatedServer {
 
 		for ( String s : xtraParams.split(" ") ) {
 			pb.command().add(s);
+			System.out.println(s);
 		}
 
 		LOGGER.info("booting onetimeserver: " + StringUtils.join(pb.command(), " "));
