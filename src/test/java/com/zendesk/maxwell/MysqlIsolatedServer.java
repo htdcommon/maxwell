@@ -100,6 +100,7 @@ public class MysqlIsolatedServer {
 		}.start();
 
 		String json = reader.readLine();
+		System.out.println(json);
 		String outputFile = null;
 		try {
 			ObjectMapper mapper = new ObjectMapper();
