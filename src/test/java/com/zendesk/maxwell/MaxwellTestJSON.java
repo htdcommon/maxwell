@@ -84,6 +84,8 @@ public class MaxwellTestJSON {
 
 			eventJSON.add(outputMap);
 		}
+		System.out.println(eventJSON);
+		System.out.println(expectedJSON);
 		assertJSON(eventJSON, expectedJSON);
 
 		return rows;

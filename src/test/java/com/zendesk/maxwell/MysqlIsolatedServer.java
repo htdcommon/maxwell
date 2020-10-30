@@ -41,7 +41,6 @@ public class MysqlIsolatedServer {
 		// only available user by default. By adding "--user=root" when the root user is used, we can make sure
 		// the tests can continue to run.
 		boolean isRoot = System.getProperty("user.name").equals("root");
-		System.out.println(isRoot);
 
 		String gtidParams = "";
 		if (MaxwellTestSupport.inGtidMode()) {
@@ -72,10 +71,8 @@ public class MysqlIsolatedServer {
 
 		for ( String s : xtraParams.split(" ") ) {
 			pb.command().add(s);
-			System.out.println(s);
 		}
 
-		System.out.println(StringUtils.join(pb.command(), " "));
 		LOGGER.info("booting onetimeserver: " + StringUtils.join(pb.command(), " "));
 		Process p = pb.start();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
