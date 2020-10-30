@@ -158,6 +158,8 @@ public class MaxwellTestJSON {
 	protected static List<RowMap> runJSONTestFile(MysqlIsolatedServer server, String fname, Consumer<MaxwellConfig> configLambda) throws Exception {
 		String dir = MaxwellTestSupport.getSQLDir();
 		SQLAndJSON testResources = parseJSONTestFile(new File(dir, fname).toString());
+		System.out.println(testResources.inputSQL);
+		System.out.println(testResources.jsonAsserts);
 
 		return runJSONTest(server, testResources.inputSQL, testResources.jsonAsserts, configLambda);
 	}
