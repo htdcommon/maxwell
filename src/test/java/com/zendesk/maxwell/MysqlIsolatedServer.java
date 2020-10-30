@@ -75,6 +75,7 @@ public class MysqlIsolatedServer {
 			System.out.println(s);
 		}
 
+		System.out.println(StringUtils.join(pb.command(), " "));
 		LOGGER.info("booting onetimeserver: " + StringUtils.join(pb.command(), " "));
 		Process p = pb.start();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
